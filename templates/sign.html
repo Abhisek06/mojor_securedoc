@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>SDM-ipfs</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+  <h2>Securedoc #1: Sign in/Sign up Form</h2>
+  <div class="container" id="container">
+    <div class="form-container sign-in-container">
+      <form action="#" method="POST">
+        {% csrf_token %}
+        <h1>Sign in</h1>
+
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" id="password" placeholder="Password">
+        <a href="#">Forgot your password?</a>
+
+      <button  type="submit" name="" value="Login">Sign In</button>
+      </form>
+    </div>
+
+  <script src="{% static 'js/index.js' %}" charset="utf-8"></script>
+</body>
+
+</html>
