@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', views.home,name="home"),
-    path('upload',views.upload,name='upload'),
+    path('model_form_upload',views.model_form_upload,name='model_form_upload'),
 ]

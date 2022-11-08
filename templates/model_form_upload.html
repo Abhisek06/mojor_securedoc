@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>SDM-ipfs</title>
+  <link rel="stylesheet" href="">
+</head>
+
+<body>
+  <h2>Securedoc #1: Sign in/Sign up Form</h2>
+  <div >
+    <div>
+      
+        {% block content %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+
+    <p><a href="{% url 'home' %}">Return to home</a></p>
+    {% endblock %}
+
+    </div>
+
+  <script src="" charset="utf-8"></script>
+</body>
+
+</html>

@@ -1,18 +1,31 @@
-from django.shortcuts import render
-from .forms import UploadFileForm
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
-
+from django.core.paginator import Paginator
+from .forms import DocumentForm
+from .models import Document
+from django.contrib.auth.models import User
+import  json
 # Create your views here.
 
 def home(request):
     return render(request,'index.html')
 
-def upload(request):
-    if request.method == 'POST':
-        form = UploadFileForm(request.POST,request.FILES)
-        file = request.FILES['file']
-        return HttpResponse(str(file)+"is Uploaded")
-    else:
-        form = UploadFileForm()
 
-    return render(request,'upload.html',{'form':form})
+
+def model_form_upload(request):
+    if request.method == 'POST':
+        form = DocumentForm(request.POST, request.FILES)
+        if form.is_valid():
+            some_var = request.POST.getlist('visible')
+            curr_title = request.POST.get('title')
+            visuser = json.dumps(some_var)
+            form.save()
+            obj = Document.objects.get(title=curr_title)
+            obj.vislist = visuser
+            obj.save()
+            return redirect('home')
+    else:
+        form = DocumentForm()
+    return render(request, 'model_form_upload.html', {
+        'form': form
+    })
