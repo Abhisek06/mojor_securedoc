@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>SDM-ipfs</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+  <h2>Securedoc #1: Sign in Form</h2>
+  <div class="container" id="container">
+    <div class="form-container sign-in-container">
+      <form action="#" method="POST">
+        {% csrf_token %}
+      <div class="float-container">
+        <div class="float-child">
+        <h1>Sign in</h1>
+
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" id="password" placeholder="Password">
+        <a href="#">Forgot your password?</a>
+          <br>
+          <br>
+          <br>
+      <button  type="submit" name="" value="Login">Sign In</button>
+      </div>
+      <div class="float-child">
+      <img id="id1" style="width:250px;height:250px;" src="{% static 'images/avatar2.png' %}" alt="Girl in a jacket" width="500" height="600">
+      </div>
+    </div>
+    </form>
+    </div>
+  </div>
+
+</body>
+
+</html>
