@@ -1,6 +1,7 @@
 from django.db import models
 from django import forms
 from django.contrib.auth.models import User
+#from ipfs_storage import InterPlanetaryFileSystemStorage 
 # Create your models here.
 
 class Document(models.Model):

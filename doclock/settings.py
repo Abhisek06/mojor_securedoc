@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'securedoc',
+    'student',
+    'login',
+    'faculty',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +137,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+#DEFAULT_FILE_STORAGE = 'ipfs_storage.InterPlanetaryFileSystemStorage'
+
+#IPFS_STORAGE_API_URL = 'http://localhost:5001/api/v0/'
+#IPFS_STORAGE_GATEWAY_URL = 'http://localhost:8080/ipfs/'
